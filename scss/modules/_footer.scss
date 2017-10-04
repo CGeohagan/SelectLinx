@@ -1,0 +1,33 @@
+/*   FOOTER
+ **************/
+ 
+.footer {
+	align-items: center;
+	background-color: $purple;
+	display: flex;
+	padding: 2em;
+	justify-content: space-between;
+
+	a,
+	p,
+	.copyright {
+		color: $white;
+		font-size: 14px;
+		font-family: $header-font;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+	}
+}
+
+.copyright {
+	align-items: center;
+	display: flex;
+
+	&__figure {
+		padding-left: 1em;
+		width: 50px;
+	}
+}
+
+
+

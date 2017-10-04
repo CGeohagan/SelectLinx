@@ -1,0 +1,128 @@
+/*   SCSS MIXINS
+ ******************/
+
+
+
+/* Modular Typography (based on Better Web Type Typography Course) */
+
+// 1. Base Size and Ratio
+
+$base: 1em; //= 18px
+$ratio: 1.5; // 
+
+// 2. The formula for modular scale is (ratio^value)*base so we need a power function
+
+@function pow($number, $exponent) {
+  $value: 1;
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+  @return $value;
+}
+
+// 3. Let's make it simpler to use by combining everything under one roof
+
+@function ms($value, $ms-ratio: $ratio, $ms-base: $base) {
+  $size: pow($ms-ratio, $value)*$ms-base;
+  @return $size;
+}
+
+
+
+/* Transitions */
+
+@mixin transition($property) {
+  transition: $property .4s ease;
+}
+
+
+
+/* Sticky Footer */
+
+@mixin sticky-footer($footer-height, $wrapper-selector: unquote("#wrapper"), $container-selector: unquote("#container"), $footer-selector: unquote("#footer")) {
+  html, body {
+    height: 100%;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  #{$wrapper-selector} {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -$footer-height;
+    #{$container-selector} {
+      padding: 0 0 $footer-height 0;
+    } 
+  }
+  #{$footer-selector} {
+    height: $footer-height; 
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+  }
+}
+
+
+/************************************************************************
+ Borrowed from Bourbon: http://bourbon.io/docs/#html5-input-types
+ Generate a variable ($all-text-inputs) with a list of all html5 input types that have a text-based input, excluding textarea.
+ http://diveintohtml5.org/forms.html
+************************************************************************/
+
+@function assign-inputs($inputs, $pseudo: null) {
+  $list : ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
+
+$inputs-list: 'input[type="email"]',
+              'input[type="number"]',
+              'input[type="password"]',
+              'input[type="search"]',
+              'input[type="tel"]',
+              'input[type="text"]',
+              'input[type="url"]',
+
+              /* Webkit & Gecko may change the display of these in the future */
+              'input[type="color"]',
+              'input[type="date"]',
+              'input[type="datetime"]',
+              'input[type="datetime-local"]',
+              'input[type="month"]',
+              'input[type="time"]',
+              'input[type="week"]';
+
+
+
+/* Bare inputs */
+
+$all-text-inputs: assign-inputs($inputs-list);
+
+
+
+/* Hover Pseudo-class */
+
+$all-text-inputs-hover: assign-inputs($inputs-list, hover);
+
+
+
+/* Focus Pseudo-class */
+
+$all-text-inputs-focus: assign-inputs($inputs-list, focus);
+

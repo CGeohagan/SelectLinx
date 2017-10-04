@@ -1,0 +1,52 @@
+/*!
+Theme Name: SelectLinx
+Theme URI: https://selectlinx.com
+Author: Colleen Geohagan
+Author URI: https://cgstudio.co
+Description: Custom theme for SelectLinx
+Version: 1.2
+License: The MIT License (MIT)
+License URI: http://opensource.org/licenses/MIT
+Text Domain: selectlinx-theme
+*/
+
+
+/* RESET & CONFIG
+------------------ */
+@import "config/reset"; 
+@import "config/fonts";
+@import "config/mixins";
+@import "config/variables";
+
+
+/* =BASE
+------------------ */
+@import "base";
+
+
+/* =LAYOUTS
+------------------ */
+@import "layout";
+
+
+/* =MODULES
+------------------ */
+@import "modules/header";
+@import "modules/main";
+@import "modules/footer";
+@import "modules/forms";
+
+
+/* =THEMES
+------------------ */
+@import "themes";
+
+
+/* =STATES
+------------------ */
+@import "states";
+
+
+/* =IE STYLES
+------------------ */
+@import "ie";

@@ -1,0 +1,149 @@
+/*   STATES
+ **************/
+
+
+
+/* General Hover States */
+
+a {
+	@include transition(color)
+	&:hover,
+	&:active,
+	&:focus {
+		color: $hover;
+	}
+}
+
+svg {
+	@include transition(transform)
+	&:hover,
+	&:active,
+	&:focus {
+		color: $hover;
+		transform: scale(1.1);
+	}
+}
+
+
+
+/* Menu States */
+
+.menu-is-active {
+	background-color: $light-gold;
+	height: 100%;
+	margin: 0;
+	padding-top: 2em;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+
+.logo-small-is-active {
+	display: block;
+}
+
+
+
+/* Access Navigation Toggle Button */
+
+.access__toggle {
+
+	span,
+	span:before,
+	span:after {
+		background-color: $dark-grey;
+		transform-origin: center;
+		transition: transform .6s ease-out,
+					background-color .6s ease-out;
+	}
+
+	span:before {
+		top: 10px;
+	}
+
+	span:after {
+		top: -10px;
+	}
+
+}
+
+.is-toggle-active {
+
+	span {
+		background:none;
+	}
+
+	span:before,
+	span:after {
+		top: 0;
+	}
+
+	span:before {
+		transform: rotate(45deg);
+	}
+
+	span:after {
+		transform: rotate(-45deg);
+	}
+
+}
+
+
+
+/* Logo Animations and States */
+
+.is-logo-hidden,
+.is-small-logo-active {
+	animation-duration: .4s;
+	transition-timing-function: ease-in;
+	animation-fill-mode: both;
+}
+
+.is-small-logo-active {
+	animation-name: smallLogo;
+	display: block;
+}
+
+.is-logo-hidden {
+	animation-name: bigLogo;
+}
+
+.access .is-menu-not-centered {
+	margin: 0;
+}
+
+@keyframes smallLogo {
+	
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+@keyframes bigLogo {
+	
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+
+}
+
+
+
+/* Slider Transitions */
+
+.slider__list {
+	@include transition(transform);
+}
+
+
+
+

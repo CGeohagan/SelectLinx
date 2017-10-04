@@ -1,0 +1,336 @@
+/*   MAIN 
+ ************/
+
+
+
+/* Front Page Styles */
+
+.hero {
+	background-color: $light-gold;
+	margin: 2em auto 0;
+	padding: 2em;
+	position: relative;
+
+	&__wrapper {
+		align-items: center;
+		background-color: $white;
+		border: 2px solid $white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 2.5em;
+	}
+
+	&__content {
+		margin: 1em auto;
+		max-width: 300px;
+	}
+
+	&__header {
+		&:before {
+			background-color: $gold;
+			content: '';
+			display: block;
+			height: 10px;
+			margin: 0 0 1em;
+			width: 80px;	
+		}
+	}
+
+	&__text {
+		font-size: 1.2em;
+		margin-top: .8em;
+	}
+
+}
+
+@media (min-width: $s) {
+
+	.hero {
+		&__header {
+			font-size: ms(1);
+		}
+
+		&__text {
+			font-size: 1.4em;
+			line-height: 1.6;
+		}
+	}
+	
+}
+
+@media (min-width: $l) {
+
+	.hero {
+		&__wrapper {
+			flex-direction: row;
+		}
+
+		&__figure {
+			width: 50%;
+		}
+	}
+
+}
+
+
+
+.background-image {
+	background-size: cover;
+	background-color: $purple;
+	background-position: top center;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 100vh;
+	position: relative;
+}
+
+
+
+.intro {
+	background-color: $light-purple;
+	display: flex;
+	justify-content: space-around;
+	padding: 150px 1em;
+	position: relative;
+
+	&__wrapper {
+		margin: 1em;
+		padding: 1em 2em;
+	}
+
+	&__header {
+		&:before {
+			background-color: $purple;
+			content: '';
+			display: block;
+			height: 10px;
+			margin: 0 0 1em;
+			width: 80px;	
+		}
+	}
+
+	&__text {
+		font-size: 1.2em;
+		margin-top: .8em;
+	}
+
+	&__figure {
+		margin: 0 auto;
+		width: 30%;
+
+		img {
+			border-radius: 100%;
+		}
+	}
+
+}
+
+.diamond {
+	position: absolute;
+  top: -75px;
+  width: 150px;
+  left: calc(50% - 75px);
+  height: auto;
+}
+
+@media (min-width: $s) {
+
+	.intro {
+
+		&__text {
+			font-size: 1.4em;
+			line-height: 1.6;
+		}
+		
+	}
+	
+}
+
+@media (min-width: $l) {
+
+	.intro {
+		&__wrapper {
+			width: 50%;
+		}
+	}
+
+}
+
+
+
+.cards {
+	margin: 100px auto;
+
+	&__header {
+		margin: 1em auto;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.card {
+	margin: 1em auto;
+	position: relative;
+	width: 100%;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	&__inner {
+		align-items: center;
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 1.5em;
+		position: absolute;
+		margin: 1.5em;
+		text-align: center;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 7;
+	}
+
+	&__link {
+		color: $coral;
+		display: inline;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	&__link:hover {
+		border-bottom: 2px solid $coral;
+	}
+
+	&__text {
+		margin: 1em auto;
+	}
+
+	&__svg {
+		height: 60px;
+		margin-bottom: 1em;
+	}
+
+	.fa {
+		font-size: 22px;
+		margin-bottom: 14px;
+	}
+}
+
+@media (min-width: $s) {
+	
+	.card {
+		width: 65%;
+	}
+
+}
+
+@media (min-width: $l) {
+
+	.card {
+		width: 45%;
+
+		&__wrapper {
+			flex-direction: row;
+		}
+
+		&__inner {
+			margin: 2em;
+		}
+	}
+
+}
+
+
+
+/* Testimonial Slider */
+
+.slider {
+	position: relative;
+	overflow: hidden;
+	
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		float: left;
+		width: 100vw;
+		min-height: 500px;
+		margin: 0;
+		padding: 0;
+		position: relative;
+
+		&:nth-child(even) {
+			background-color: $light-purple;
+			border-bottom: 8px solid $coral;
+		}
+
+		&:nth-child(odd) {
+			background-color: $light-gold;
+			border-bottom: 8px solid $gold;
+		}
+	}
+}
+
+.testimonials {
+
+	&__header {
+		left: 30%;
+		position: absolute;
+		text-align: center;
+		top: 3em;
+		width: 40%;
+		z-index: 5;
+	}
+
+}
+
+.testimonial {
+	margin: 6em auto 5em;
+	padding: 3em 1em;
+	width: 80%;
+	
+	&__description {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	&__contact {
+		font-family: $header-font;
+		font-size: 20px;
+		font-weight: 600;
+		margin-top: 1em;
+		text-align: right;
+	}
+}
+
+.slider__buttons {
+	bottom: 1em;
+	position: absolute;
+	left: 20%;
+	text-align: center;
+	width: 60%;
+	z-index: 5;
+
+	button {
+		background: none;
+	}
+
+	.fa {
+		font-size: 50px;
+		margin: 0 1em;
+		padding: .5em;
+	}
+}
+
+
