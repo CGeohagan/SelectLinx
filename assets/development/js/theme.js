@@ -11,7 +11,8 @@ jQuery(document).ready(function($){
 	function logoAnimations() {
 
 		// For Chrome, use document.body.scrollTop to find the distance scrolled in pixels
-		var bodyScrollTop = document.body.scrollTop;
+		var bodyScrollTop = document.scrollingElement.scrollTop;
+
 		// For Firefox and IE, use document.documentElement.scrollTop to find the distance scrolled in pixels
 		var docScrollTop = document.documentElement.scrollTop;
 
@@ -24,6 +25,7 @@ jQuery(document).ready(function($){
 		var menuContainer = document.querySelector('.menu-container');
 
 		if ( bodyScrollTop > logoTop ) {
+			console.log('hello');
 			logoSmall.classList.add('is-small-logo-active');
 			logo.classList.add('is-logo-hidden');
 			menuContainer.classList.add('is-menu-not-centered');
