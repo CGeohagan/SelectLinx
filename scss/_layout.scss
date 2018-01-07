@@ -39,5 +39,14 @@ $thumbwidth: 150px; /* Set to whatever width your actual thumbs are */
 
 /* Sticky footer */
 
-//@include sticky-footer( $footer-height, '#page','#main','.footer');
+@media (min-width: $s) {
+    @include sticky-footer( $footer-height, '#page','#main','#footer');
+}
+
+
+/* Clearfix */
+
+.clearfix {
+    @include clearfix;
+}
 

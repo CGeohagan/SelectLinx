@@ -90,12 +90,23 @@ function selectlinx_theme_scripts() {
 //		get_template_directory_uri() . '/assets/vendor/newscript.js',
 //		array('jquery')
 //	);
-	// theme scripts
+	// Theme Scripts
 	wp_enqueue_script(
 		'theme-init',
 		get_template_directory_uri() . '/assets/js/theme.js',
 		array('jquery')
 	);
+
+	// Slider Scripts
+	if (is_page('Home')) {
+		wp_enqueue_script(
+			'slider-init',
+			get_template_directory_uri() . '/assets/js/slider.js',
+			array('jquery')
+		);
+	}
+
+
 }    
 add_action('wp_enqueue_scripts', 'selectlinx_theme_scripts');
 

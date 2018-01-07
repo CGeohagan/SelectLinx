@@ -5,7 +5,7 @@
 
 /* General Text */
 
-html, body, input, textarea {
+html, body, p, input, textarea {
 	color: $text;
 	font-size: 16px;
 	font-family: $body-font;
@@ -178,8 +178,6 @@ a img.aligncenter {
 }
 
 .hentry {
-	margin: 0 0 45px;
-	padding: 0 0 40px;
 	position: relative;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;

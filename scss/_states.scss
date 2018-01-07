@@ -28,14 +28,25 @@ svg {
 
 /* Menu States */
 
-.menu-is-active {
-	background-color: $light-gold;
-	height: 100%;
-	margin: 0;
-	padding-top: 2em;
-	position: fixed;
-	width: 100%;
-	z-index: 10;
+@media (max-width: $m) {
+	.menu-container {
+		height: 0;
+		overflow: hidden;
+	}
+
+	.is-menu-active {
+		@include transition(height);
+		background-color: $light-gold;
+		display: block;
+		height: 100vh;
+		margin: 0;
+		padding-top: 2em;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100vw;
+		z-index: 10;
+	}
 }
 
 .logo-small-is-active {

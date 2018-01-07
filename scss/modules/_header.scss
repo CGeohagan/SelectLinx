@@ -13,10 +13,6 @@
   width: 100%;
   z-index: 10;
 
-  .menu-container {
-  	display: none;
-  }
-
 	.menu {
 		display: flex;
 		flex-direction: column;
@@ -46,7 +42,7 @@
 .logo {
 	display: block;
 	margin: 0 auto;
-	padding: 110px 0 0;
+	padding: 90px 0 10px;
 	text-align: center;
 
 	&:hover, 
@@ -79,6 +75,10 @@
 		.menu {
 			flex-direction: row;
 		}
+	}
+
+	.logo {
+		padding: 100px 0 10px;
 	}
 
 }

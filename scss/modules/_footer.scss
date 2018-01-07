@@ -5,8 +5,8 @@
 	align-items: center;
 	background-color: $purple;
 	display: flex;
+	flex-direction: column;
 	padding: 2em;
-	justify-content: space-between;
 
 	a,
 	p,
@@ -22,11 +22,31 @@
 .copyright {
 	align-items: center;
 	display: flex;
+	flex-direction: column;
+	text-align: center;
 
 	&__figure {
-		padding-left: 1em;
+		margin: 1em;
 		width: 50px;
 	}
+}
+
+@media (min-width:$s) {
+	
+	.footer {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.copyright {
+		flex-direction: row;
+		text-align: left;
+
+		&__figure {
+			padding-left: 1em;
+		}
+	}
+
 }
 
 

@@ -1,8 +1,31 @@
 /*      THEME
  ********************/
 
+.page-template-page_full-width {
+	.page {
+		background-color: $color-prim;
+		padding: 1.5em;
+	}
 
+	.container {
+		background-color: $white;
+		padding: 1.5em;
+	}
+}
 
+@media (min-width:$m) {
+	
+	.page-template-page_full-width {
+		.page {
+			padding: 75px;
+		}
+
+		.container {
+			padding: 2em;
+		}
+	}
+
+}
 
 
 
