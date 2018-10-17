@@ -40,8 +40,8 @@
 	<div id="page">
         <a class="skip-link screen-reader-text" href="#main"><?php _e( 'Skip to content', 'selectlinx-theme' ); ?></a>
 		<header id="site-header" role="banner" class="header">            
-			<nav class="access" role="navigation">
-                <div class="logo-small">SelectLinx</div>
+            <nav class="access" role="navigation">
+                <div><a href="<?php echo esc_url( home_url() ); ?>/" class="logo-small">SelectLinx</a></div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-container' ) ); ?>
                 <button class="access__toggle">
                     <span></span>

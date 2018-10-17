@@ -2,17 +2,15 @@
  **************/
 
 
-
 /* General Text */
 
 html, body, p, input, textarea {
 	color: $text;
 	font-size: 16px;
 	font-family: $body-font;
-	line-height: 1.5;
+	line-height: 1.4;
 	letter-spacing: 1px;
 }
-
 
 
 /* Headings */
@@ -28,6 +26,7 @@ h2 {
 	font-family: $header-font;
 	font-size: ms(2);
 	letter-spacing: 1.4px;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -39,10 +38,9 @@ h3 {
 }
 
 h4 {
-	font-family: $body-font;
+	font-family: $header-font;
 	font-size: ms(1);
 }
-
 
 
 /* Text elements */
@@ -54,7 +52,6 @@ ul, ol {
 ul {
 	list-style: none;
 }
-
 
 
 /* Links */
@@ -76,7 +73,6 @@ button {
 }
 
 
-
 /* Assistive text */
 .assistive-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -85,7 +81,6 @@ button {
     width: 1px;
     overflow: hidden;
 }
-
 
 
 /* Images & Embeds */
@@ -114,7 +109,6 @@ img {
 		margin-bottom: 1.5em;
 	}
 }
-
 
 
 /* Wordpress Core */
@@ -251,7 +245,5 @@ a img.aligncenter {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
-
-
 
 

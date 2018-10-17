@@ -59,6 +59,22 @@ function selectlinx_theme_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+  register_sidebar( array(
+    'name' => __( 'Contact Form', 'selectlinx-theme' ),
+    'id' => 'form-sidebar-1',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => "</aside>",
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+    'name' => __( 'Assessments Form', 'selectlinx-theme' ),
+    'id' => 'form-sidebar-2',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => "</aside>",
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'selectlinx_theme_widgets_init' );
 
@@ -85,11 +101,11 @@ function selectlinx_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	// vendor scripts
-//	wp_enqueue_script(
-//		'vendor',
-//		get_template_directory_uri() . '/assets/vendor/newscript.js',
-//		array('jquery')
-//	);
+	wp_enqueue_script(
+		'greensock',
+		'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js',
+		array('jquery'), '1.0', true
+	);
 	// Theme Scripts
 	wp_enqueue_script(
 		'theme-init',
@@ -98,7 +114,7 @@ function selectlinx_theme_scripts() {
 	);
 
 	// Slider Scripts
-	if (is_page('Home')) {
+	if (is_page('Home') || is_page('Services')) {
 		wp_enqueue_script(
 			'slider-init',
 			get_template_directory_uri() . '/assets/js/slider.js',
@@ -116,7 +132,8 @@ add_action('wp_enqueue_scripts', 'selectlinx_theme_scripts');
 
 function wpb_add_google_fonts() {
 
-    wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700%7COswald:400,500%7CMontserrat:400,400i,600', false);
+    // wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i%7CMontserrat:400,400i,600i%7CFira+Sans:400,400i,600', false);
+    wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Muli:400,400i,600|Philosopher:400,700', false);
 }
 
 add_action ('wp_enqueue_scripts', 'wpb_add_google_fonts');

@@ -9,6 +9,10 @@
 ?>
 
 </div><!-- #page -->
+<div class="cta">
+	<h3 class="cta__header">Want to learn more?</h3>
+	<a href="mailto:shribar@selectlinx.com" class="cta__link">Email Us</a>
+</div>
 <footer id="footer" role="contentinfo" class="footer row">
 	<div class="copyright">
 		<div class="copyright__wrapper">

@@ -23,15 +23,18 @@ jQuery(document).ready(function($){
 		var logoSmall = document.querySelector('.logo-small');
 		var logo = document.querySelector('.logo');
 		var menuContainer = document.querySelector('.menu-container');
+		var access = document.querySelector('.access');
 
 		if ( bodyScrollTop > logoTop ) {
 			logoSmall.classList.add('is-small-logo-active');
 			logo.classList.add('is-logo-hidden');
 			menuContainer.classList.add('is-menu-not-centered');
+			access.classList.add('box-shadow');
 		} else {
 			logoSmall.classList.remove('is-small-logo-active');
 			logo.classList.remove('is-logo-hidden');
 			menuContainer.classList.remove('is-menu-not-centered');
+			access.classList.remove('box-shadow');
 		}
 
 	}
@@ -68,8 +71,21 @@ jQuery(document).ready(function($){
 	var accessToggle = document.querySelector('.access__toggle');
 	var menuContainer = document.querySelector('.menu-container');
 
-	accessToggle.addEventListener('click', function() {
+	accessToggle.addEventListener('click', function(e) {
+		console.log(accessToggle);
 		menuContainer.classList.toggle('is-menu-active');
+		accessToggle.classList.toggle('is-toggle-active');
 	});
 
+
+
+	/**************************************************
+			Greensock Animations
+	**************************************************/
+
+	// Animations that are called when home page or portfolio page loads
+	TweenMax.staggerFrom('.menu a', .2, {opacity:0, ease:Power2.easeIn, delay: .1}, .1);
+
+	TweenMax.fromTo("#main", .4, {y: 100, opacity: .5}, {y: 0, opacity: 1}, .6);
+	
 });

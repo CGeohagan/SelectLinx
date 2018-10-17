@@ -49,5 +49,31 @@
 
 }
 
+.cta {
+	background-color: $purple;
+	color: $white;
+	text-align: center;
+	padding: 1em;
+
+	&__header {
+		margin: .5em 0 1em;
+	}
+
+	&__link {
+		@include transition(background);
+		background-color: $coral;
+		color: $white;
+		display: inline-block;
+		padding: 1em;
+		text-align: center;
+		text-transform: uppercase;
+		transform: skewX(-10deg);
+
+		&:hover {
+			background-color: $white;
+		}
+	}
+}
+
 
 

@@ -2,11 +2,9 @@
  *******************/
 
 
-
 /* Sizes */
 $max-width: 740px;
 $footer-height: 106px;
-
 
 
 /* Colors */
@@ -23,22 +21,18 @@ $light-gold     : #EFE5D4;
 $coral					: #E7875D;
 
 
-
 // Functional color variables
 
 $color-prim         : $light-purple;
 $color-sec          : $purple;
 $link               : $purple;
-$hover              : $gold;
+$hover              : $coral;
 $text               : $dark-grey;
 
 
-
 /* Fonts */
-$header-font: 'Montserrat', sans-serif;
-$second-header: 'Oswald', sans-serif;
-$body-font: 'Droid Sans', sans-serif;
-
+$header-font: 'League Spartan', 'Fira Sans', sans-serif;
+$body-font: 'Muli', sans-serif;
 
 
 /* Font Size */
@@ -52,12 +46,10 @@ $large:  30px;
 $xlarge: 36px;
 
 
-
 /* Breakpoints */
 $xl: 1200px;
 $l: 1000px;
 $m: 850px;
 $s: 740px;
 $xs: 500px;
-
 

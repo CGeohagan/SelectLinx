@@ -2,7 +2,6 @@
  **************/
 
 
-
 /* General Hover States */
 
 a {
@@ -25,27 +24,19 @@ svg {
 }
 
 
-
 /* Menu States */
 
 @media (max-width: $m) {
-	.menu-container {
-		height: 0;
-		overflow: hidden;
+	.menu-container .menu {
+		@include transition(all);
+		opacity: 0;
+		transform: translateX(100%);
 	}
 
-	.is-menu-active {
-		@include transition(height);
-		background-color: $light-gold;
-		display: block;
-		height: 100vh;
-		margin: 0;
-		padding-top: 2em;
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: 100vw;
-		z-index: 10;
+	.is-menu-active .menu {
+		@include transition(all);
+		opacity: 1;
+		transform: translateX(0%);
 	}
 }
 
@@ -53,12 +44,14 @@ svg {
 	display: block;
 }
 
+.box-shadow {
+	box-shadow: 0 5px 10px rgba(0,0,0,.05);
+}
 
 
 /* Access Navigation Toggle Button */
 
 .access__toggle {
-
 	span,
 	span:before,
 	span:after {
@@ -75,11 +68,9 @@ svg {
 	span:after {
 		top: -10px;
 	}
-
 }
 
 .is-toggle-active {
-
 	span {
 		background:none;
 	}
@@ -96,9 +87,7 @@ svg {
 	span:after {
 		transform: rotate(-45deg);
 	}
-
 }
-
 
 
 /* Logo Animations and States */
@@ -124,7 +113,6 @@ svg {
 }
 
 @keyframes smallLogo {
-	
 	0% {
 		opacity: 0;
 	}
@@ -132,11 +120,9 @@ svg {
 	100% {
 		opacity: 1;
 	}
-
 }
 
 @keyframes bigLogo {
-	
 	0% {
 		opacity: 1;
 	}
@@ -144,15 +130,13 @@ svg {
 	100% {
 		opacity: 0;
 	}
-
 }
-
 
 
 /* Slider Transitions */
 
 .slider__list {
-	@include transition(transform);
+	transition: transform .6s ease;
 }
 
 

@@ -11,7 +11,6 @@ jQuery(document).ready(function($){
 	// Select all of the style list items
 	var sliderList = document.querySelector('.slider__list');
 	var sliderListLi = document.querySelectorAll('.slider__list li');
-	console.log(sliderListLi);
 
 	// Determine the number of list items using the length property
 	var listNum = sliderListLi.length;
@@ -26,6 +25,7 @@ jQuery(document).ready(function($){
 
 	// Create function for setting transformX value when slider moves
 	function setTransform(transformX) {
+		sliderList.style.WebkitTransform = 'translateX(' + transformX + 'vw)';
 		sliderList.style.transform = 'translateX(' + transformX + 'vw)';
 	}
 
@@ -49,8 +49,7 @@ jQuery(document).ready(function($){
 	var transformXValue = 0;
 	setTransform(transformXValue);	
 
-	// When you click on the next button
-	nextButton.addEventListener('click', function() {
+	setInterval(function(){ 
 		if (currentSliderLi === lastSliderLi) {
 			// If the current list item is the last one
 			// 1) Move active class to first list item
@@ -70,30 +69,53 @@ jQuery(document).ready(function($){
 			transformXValue = transformXValue - 100;
 			setTransform(transformXValue);
 		}
-	});
+	}, 10000);
 
-	// When you click on the previous button
-	prevButton.addEventListener('click', function() {
-		if (currentSliderLi === firstSliderLi) {
-			// If the current list item is the first one
-			// 1) Move active class to last list item
-			removeActiveSlider();
-			currentSliderLi = lastSliderLi;
-			addActiveSlider();
-			// 2) Set the transformX value to end of the list
-			transformXValue = lastSliderNum;
-			setTransform(transformXValue);
-		} else {
-			// If the current list item is not the first one
-			// 1) Move active class to previous list item
-			removeActiveSlider();
-			currentSliderLi = currentSliderLi.previousElementSibling;
-			addActiveSlider();
-			// 2) Add 100vw from the transformx Value
-			transformXValue = transformXValue + 100;
-			setTransform(transformXValue);
-		}
-	});
+	// // When you click on the next button
+	// nextButton.addEventListener('click', function() {
+	// 	if (currentSliderLi === lastSliderLi) {
+	// 		// If the current list item is the last one
+	// 		// 1) Move active class to first list item
+	// 		removeActiveSlider();
+	// 		currentSliderLi = firstSliderLi;
+	// 		addActiveSlider();
+	// 		// 2) Set the transformX value to beginning of the list
+	// 		transformXValue = 0;
+	// 		setTransform(transformXValue);
+	// 	} else {
+	// 		// If the current list item is not the last one
+	// 		// 1) Move active class to next list item
+	// 		removeActiveSlider();
+	// 		currentSliderLi = currentSliderLi.nextElementSibling;
+	// 		addActiveSlider();
+	// 		// 2) Subtract 100vw from the transformx Value
+	// 		transformXValue = transformXValue - 100;
+	// 		setTransform(transformXValue);
+	// 	}
+	// });
+
+	// // When you click on the previous button
+	// prevButton.addEventListener('click', function() {
+	// 	if (currentSliderLi === firstSliderLi) {
+	// 		// If the current list item is the first one
+	// 		// 1) Move active class to last list item
+	// 		removeActiveSlider();
+	// 		currentSliderLi = lastSliderLi;
+	// 		addActiveSlider();
+	// 		// 2) Set the transformX value to end of the list
+	// 		transformXValue = lastSliderNum;
+	// 		setTransform(transformXValue);
+	// 	} else {
+	// 		// If the current list item is not the first one
+	// 		// 1) Move active class to previous list item
+	// 		removeActiveSlider();
+	// 		currentSliderLi = currentSliderLi.previousElementSibling;
+	// 		addActiveSlider();
+	// 		// 2) Add 100vw from the transformx Value
+	// 		transformXValue = transformXValue + 100;
+	// 		setTransform(transformXValue);
+	// 	}
+	// });
 
 
 

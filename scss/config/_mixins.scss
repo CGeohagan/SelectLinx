@@ -2,13 +2,12 @@
  ******************/
 
 
-
 /* Modular Typography (based on Better Web Type Typography Course) */
 
 // 1. Base Size and Ratio
 
 $base: 1em; //= 18px
-$ratio: 1.5; // 
+$ratio: 1.4; // 
 
 // 2. The formula for modular scale is (ratio^value)*base so we need a power function
 
@@ -30,13 +29,11 @@ $ratio: 1.5; //
 }
 
 
-
 /* Transitions */
 
 @mixin transition($property) {
   transition: $property .4s ease;
 }
-
 
 
 /* Sticky Footer */
@@ -109,17 +106,14 @@ $inputs-list: 'input[type="email"]',
               'input[type="week"]';
 
 
-
 /* Bare inputs */
 
 $all-text-inputs: assign-inputs($inputs-list);
 
 
-
 /* Hover Pseudo-class */
 
 $all-text-inputs-hover: assign-inputs($inputs-list, hover);
-
 
 
 /* Focus Pseudo-class */
