@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="main" class="row full-width" role="main">
+<main id="main" class="row" role="main">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 	
@@ -66,7 +66,16 @@ get_header(); ?>
 				</div>
 				<div class="quote">
 					<div class="quote__wrapper">
-						<p class="quote__paragraph"><?php the_field('quote'); ?></p>
+						<svg class="quote__svg" viewBox="0 0 214 214" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g stroke="none" stroke-width="8" fill="none" fill-rule="evenodd">
+					        <g transform="translate(-456.000000, -1398.000000)" stroke="#fff">
+					            <g transform="translate(562.893756, 1504.504192) rotate(45.000000) translate(-562.893756, -1504.504192) translate(487.893756, 1429.504192)">
+					                <rect x="0" y="0" width="150" height="150"></rect>
+					            </g>
+					        </g>
+					    </g>
+						</svg>
+						<p class="quote__paragraph quote__paragraph-thick"><?php the_field('quote'); ?></p>
 						<?php if( have_rows('quote_list') ): ?>
 		          <ul class="quote__list">
 		            <?php while( have_rows('quote_list') ): the_row(); 

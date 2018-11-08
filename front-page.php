@@ -35,6 +35,7 @@ get_header(); ?>
 		    </g>
 			</svg>
 			<p class="quote__paragraph"><?php the_field('quote'); ?></p>
+			<p class="quote__header"><?php the_field('quote_header'); ?></p>
 		</div>
 	</section>
 	<section class="intro">
@@ -42,38 +43,37 @@ get_header(); ?>
 			<img src="<?php echo get_field('intro_figure')['url']; ?>" alt="<?php echo get_field('intro_figure')['alt']; ?>" />
 		</figure>
 		<div class="intro__wrapper">
-			<h3 class="intro__header">
-				<?php the_field('intro_header'); ?>
-			</h3>
-			<p class="intro__text">
+			<p class="intro__text intro__text-gold">
 				<?php the_field('intro_text'); ?>
 			</p>
 		</div>
 	</section>
-	<section class="testimonials slider">
+	<section class="testimonials slider swiper-container">
 		<h3 class="testimonials__header"><?php the_field('testimonials_header'); ?></h3>
       <?php if( have_rows('testimonials') ): ?>
-	    	<ul class="slider__list">
+	    	<div class="slider__list swiper-wrapper">
 	      <?php while( have_rows('testimonials') ): the_row(); 
 	        // vars
 	        $description = get_sub_field('testimonial_description');
 	        $contact = get_sub_field('testimonial_contact');
 	        ?>
 
-	        <li class="slider__item">
+	        <div class="slider__item swiper-slide">
 	        	<div class="testimonial">
+	        		<!-- <i class="fa fa-quote-left"></i> -->
 		          <?php if( $description ): ?>
-		            <p class="testimonial__description"><?php echo $description; ?></p>
+		            <div class="testimonial__description"><?php echo $description; ?></div>
 		          <?php endif; ?>
 
 		          <?php if( $contact ): ?>
 		            <p class="testimonial__contact"><?php echo $contact; ?></p>
 		          <?php endif; ?>
 	          </div>
-	        </li>
+	        </div>
 
 	      <?php endwhile; ?>
-	    </ul>
+	    </div>
+	    <div class="swiper-pagination"></div>
 <!-- 	    <div class="slider__buttons">
 	    	<button class="prev-button">
 	    		<i class="fa fa-caret-left" aria-hidden="true"></i>

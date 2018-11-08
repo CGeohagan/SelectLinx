@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="main" class="row full-width" role="main">
+<main id="main" class="row" role="main">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 	
@@ -16,26 +16,26 @@ get_header(); ?>
 				<div class="box__header text-align">
 					<h2><?php the_title(); ?></h2>
 				</div>
-				<figure class="services__figure">
-					<img src="<?php echo get_field('service_image_1')['url']; ?>" alt="<?php echo get_field('service_image_1')['alt']; ?>" />
-				</figure>
-				<section class="services">
-					<div class="service">
+				<div class="services">
+					<div class="service service-1">
+						<figure class="service__figure">
+							<img src="<?php echo get_field('service_image_1')['url']; ?>" alt="<?php echo get_field('service_image_1')['alt']; ?>" />
+						</figure>
 						<div class="service__wrapper">
 							<h3 class="service__header"><?php the_field('service_header_1'); ?></h3>
 							<p class="service__text"><?php the_field('service_text_1'); ?></p>
 						</div>
 					</div>
 					<div class="service">
+						<figure class="service__figure">
+							<img src="<?php echo get_field('service_image_2')['url']; ?>" alt="<?php echo get_field('service_image_2')['alt']; ?>" />
+						</figure>
 						<div class="service__wrapper">
 							<h3 class="service__header"><?php the_field('service_header_2'); ?></h3>
 							<p class="service__text"><?php the_field('service_text_2'); ?></p>
 						</div>
 					</div>
-				</section>
-				<figure class="services__figure">
-					<img src="<?php echo get_field('service_image_2')['url']; ?>" alt="<?php echo get_field('service_image_2')['alt']; ?>" />
-				</figure>
+				</div>
 				<section class="quote">
 					<div class="quote__wrapper">
 						<svg class="quote__svg" viewBox="0 0 214 214" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -50,30 +50,31 @@ get_header(); ?>
 						<p class="quote__paragraph"><?php the_field('quote'); ?></p>
 					</div>
 				</section>
-				<section class="testimonials slider">
+				<section class="testimonials slider swiper-container">
 					<h3 class="testimonials__header"><?php the_field('testimonials_header'); ?></h3>
 			      <?php if( have_rows('testimonials') ): ?>
-				    	<ul class="slider__list">
+				    	<div class="slider__list swiper-wrapper">
 				      <?php while( have_rows('testimonials') ): the_row(); 
 				        // vars
-				        $description = get_sub_field('testimonial_description');
+				        $description = get_sub_field('testimonial_description', false, false);
 				        $contact = get_sub_field('testimonial_contact');
 				        ?>
 
-				        <li class="slider__item slider__item-services">
+				        <div class="slider__item slider__item-services swiper-slide">
 				        	<div class="testimonial">
 					          <?php if( $description ): ?>
-					            <p class="testimonial__description"><?php echo $description; ?></p>
+					            <div class="testimonial__description"><?php echo $description; ?></div>
 					          <?php endif; ?>
 
 					          <?php if( $contact ): ?>
 					            <p class="testimonial__contact"><?php echo $contact; ?></p>
 					          <?php endif; ?>
 				          </div>
-				        </li>
-
+				        </div>
+				        
 				      <?php endwhile; ?>
-				    </ul>
+				    </div>
+				    <div class="swiper-pagination"></div>
 			<!-- 	    <div class="slider__buttons">
 				    	<button class="prev-button">
 				    		<i class="fa fa-caret-left" aria-hidden="true"></i>

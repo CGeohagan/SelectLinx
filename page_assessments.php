@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="main" class="row full-width" role="main">
+<main id="main" class="row" role="main">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 	
@@ -21,6 +21,7 @@ get_header(); ?>
 				</figure>
 				<div class="assessments">
 					<div class="assessments__wrapper">
+						<h4 class="assessments__header"><?php the_field('assessments_header'); ?></h4>
 						<p class="assessments__text"><?php the_field('assessments_text'); ?></p>
 						<div class="contact__form">
 							<?php dynamic_sidebar('form-sidebar-2'); ?>

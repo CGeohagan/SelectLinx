@@ -16,7 +16,7 @@
 <footer id="footer" role="contentinfo" class="footer row">
 	<div class="copyright">
 		<div class="copyright__wrapper">
-			&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?><br>
+			&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>&trade;<br>
 			<p>All Rights Reserved</p>
 		</div>	
 		<figure class="copyright__figure">
@@ -24,7 +24,7 @@
 		</figure>
 	</div>
 	
-	<p>made by<a href="https://cgstudio.co" target="_blank" rel="nofollow"> CG Studio</a></p>
+	<p><a href="/index.php?page_id=318" target="_blank" rel="nofollow">Privacy Policy</a></p>
 </footer><!-- #colophon -->
 
 <?php wp_footer(); ?>

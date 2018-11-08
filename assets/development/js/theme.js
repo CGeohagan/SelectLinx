@@ -1,6 +1,5 @@
 jQuery(document).ready(function($){
 
-
 	
 	/********************
 		 Logo Animations
@@ -11,10 +10,9 @@ jQuery(document).ready(function($){
 	function logoAnimations() {
 
 		// For Chrome, use document.body.scrollTop to find the distance scrolled in pixels
-		var bodyScrollTop = document.scrollingElement.scrollTop;
-
 		// For Firefox and IE, use document.documentElement.scrollTop to find the distance scrolled in pixels
-		var docScrollTop = document.documentElement.scrollTop;
+
+		var bodyScrollTop = document.scrollingElement.scrollTop || document.documentElement.scrollTop;
 
 		// The approximate number of pixels scrolled to the large logo is hidden
 		var logoTop = 40;
@@ -72,7 +70,6 @@ jQuery(document).ready(function($){
 	var menuContainer = document.querySelector('.menu-container');
 
 	accessToggle.addEventListener('click', function(e) {
-		console.log(accessToggle);
 		menuContainer.classList.toggle('is-menu-active');
 		accessToggle.classList.toggle('is-toggle-active');
 	});

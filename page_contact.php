@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="main" class="row full-width" role="main">
+<main id="main" class="row" role="main">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 	
@@ -21,9 +21,7 @@ get_header(); ?>
 				</figure>
 				<div class="contact">
 					<div class="contact__wrapper">
-						<div class="contact__content">
-							<?php the_content(); ?>
-						</div>
+						<h4 class="contact__header"><?php the_field('contact_header'); ?></h4>
 						<div class="contact__form">
 							<?php dynamic_sidebar('form-sidebar-1'); ?>
 						</div>
