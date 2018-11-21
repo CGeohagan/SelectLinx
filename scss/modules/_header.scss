@@ -4,12 +4,11 @@
 .access {
 	align-items: center;
 	background-color: $white;
-
- // border-top: $light-gold 8px solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 10;
 

@@ -948,7 +948,6 @@
 	}
 
 	&__list {
-		color: $purple;
 		display: inline-block;
 		list-style: disc;
 		margin: 1em auto 0;
@@ -959,10 +958,6 @@
 
 		li {
 			margin: .2em 0 0 1em;
-		}
-
-		span {
-			color: $purple;
 		}
 	}
 }
@@ -1101,6 +1096,10 @@
 		text-transform: none;
 		margin-top: .5em;
 	}
+}
 
+.error404 {
+	margin: 3em auto;
+	text-align: center;
 }
 

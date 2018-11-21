@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<section id="primary" role="main" class="col pull-left span_8">
+<section id="primary" role="main" class="col span_8">
 
 	<article id="post-0" class="post error404 not-found">
 		<header class="entry-header">
@@ -15,13 +15,10 @@ get_header(); ?>
 		</header>
 
 		<div class="entry-content">
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps a search would help?', 'selectlinx-theme' ); ?></p>
-
-			<?php get_search_form(); ?>
+			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'selectlinx-theme' ); ?></p>
 
 		</div><!-- .entry-content -->
 	</article><!-- #post-0 -->
 
 </section><!-- #primary -->
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>?>
+<?php get_footer(); ?>
