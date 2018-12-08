@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+document.addEventListener("DOMContentLoaded", function(){
 
 	var mySwiper = new Swiper ('.swiper-container', {
 	  // Optional parameters
@@ -12,7 +12,11 @@ jQuery(document).ready(function($){
 	  // If we need pagination
 	  pagination: {
 	    el: '.swiper-pagination',
-	    clickable: true
+	    clickable: true, 
+	    type: 'bullets',
+	   //  renderBullet: function (index, className) {
+    // 		return '<span class="' + className + '">' + (index + 1) + '</span>';
+  		// }
 	  }
 
 	  // // Navigation arrows

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){!function(){if("function"==typeof NodeList.prototype.forEach)return!1;NodeList.prototype.forEach=Array.prototype.forEach}(),document.querySelectorAll(".details__wrapper").forEach(function(t){t.addEventListener("click",function(){t.classList.toggle("detail-active")})})});

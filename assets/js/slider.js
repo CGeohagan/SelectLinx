@@ -1,1 +1,1 @@
-jQuery(document).ready(function(e){new Swiper(".swiper-container",{speed:500,autoplay:{delay:15e3,disableOnInteraction:!1},loop:!0,pagination:{el:".swiper-pagination",clickable:!0}})});
+document.addEventListener("DOMContentLoaded",function(){new Swiper(".swiper-container",{speed:500,autoplay:{delay:15e3,disableOnInteraction:!1},loop:!0,pagination:{el:".swiper-pagination",clickable:!0,type:"bullets"}})});

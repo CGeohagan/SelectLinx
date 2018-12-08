@@ -1,5 +1,4 @@
-jQuery(document).ready(function($){
-
+document.addEventListener("DOMContentLoaded", function(){
 	
 	/********************
 		 Logo Animations
@@ -7,13 +6,14 @@ jQuery(document).ready(function($){
 
 	// When you scroll past the large logo, add the small logo class to make it appear
 
+	
 	function logoAnimations() {
+
 
 		// For Chrome, use document.body.scrollTop to find the distance scrolled in pixels
 		// For Firefox and IE, use document.documentElement.scrollTop to find the distance scrolled in pixels
 
-		var bodyScrollTop = document.scrollingElement.scrollTop || document.documentElement.scrollTop;
-
+		var bodyScrollTop = document.documentElement.scrollTop || document.scrollingElement.scrollTop ||  document.body.scrollTop;
 		// The approximate number of pixels scrolled to the large logo is hidden
 		var logoTop = 40;
 

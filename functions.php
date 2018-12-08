@@ -40,9 +40,6 @@ function selectlinx_theme_setup() {
 		'comment-form',
 		'gallery',
 	) );
-	
-	// Add custom image sizes
-	// add_image_size( 'name', 500, 300 );
 }
 endif;
 add_action( 'after_setup_theme', 'selectlinx_theme_setup' );
@@ -98,11 +95,6 @@ function selectlinx_theme_scripts() {
 
 	// swiper css
 	wp_enqueue_style( 'swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css' );
-	
-	// threaded comments
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 
 	// vendor scripts
 	wp_enqueue_script(
@@ -133,6 +125,15 @@ function selectlinx_theme_scripts() {
 		);
 	}
 
+	// Dropdown Scripts
+	if (is_page('Hiring')) {
+		wp_enqueue_script(
+			'drop-down',
+			get_template_directory_uri() . '/assets/js/dropDown.js',
+			array('jquery')
+		);
+	}
+
 }    
 add_action('wp_enqueue_scripts', 'selectlinx_theme_scripts');
 
@@ -158,7 +159,7 @@ include('inc/functions/comments.php');
 // Includes: TinyMCE tweaks, admin menu & bar settings, query overrides
 include('inc/functions/customizations.php');
 
-/**
- * Remove the front-end admin bar for everybody, always
- */
-show_admin_bar( false );
+// Automatically update plugins and 	
+add_filter( 'auto_update_plugin', '__return_true' );
+add_filter( 'auto_update_theme', '__return_true' );
+

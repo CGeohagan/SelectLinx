@@ -35,32 +35,32 @@ get_header(); ?>
 				<div class="details details-1">
 					<div class="details__wrapper">
 						<div class="number">01</div>
-						<h4 class="details__header"><?php the_field('details_header_1'); ?></h4>
+						<h4 class="details__header"><?php the_field('details_header_1'); ?><i class="fa fa-chevron-down"></i></h4>
 						<p class="details__text"><?php the_field('details_text_1'); ?></p>
 					</div>
 					<div class="details__wrapper">
 						<div class="number">02</div>
-						<h4 class="details__header"><?php the_field('details_header_2'); ?></h4>
+						<h4 class="details__header"><?php the_field('details_header_2'); ?><i class="fa fa-chevron-down"></i></h4>
 						<p class="details__text"><?php the_field('details_text_2'); ?></p>
 					</div>
 					<div class="details__wrapper">
 						<div class="number">03</div>
-						<h4 class="details__header"><?php the_field('details_header_3'); ?></h4>
+						<h4 class="details__header"><?php the_field('details_header_3'); ?><i class="fa fa-chevron-down"></i></h4>
 						<p class="details__text"><?php the_field('details_text_3'); ?></p>
 					</div>
 					<div class="details__wrapper">
 						<div class="number">04</div>
-						<h4 class="details__header"><?php the_field('details_header_4'); ?></h4>
+						<h4 class="details__header"><?php the_field('details_header_4'); ?><i class="fa fa-chevron-down"></i></h4>
 						<p class="details__text"><?php the_field('details_text_4'); ?></p>
 					</div>
 					<div class="details__wrapper">
 						<div class="number">05</div>
-						<h4 class="details__header"><?php the_field('details_header_5'); ?></h4>
+						<h4 class="details__header"><?php the_field('details_header_5'); ?><i class="fa fa-chevron-down"></i></h4>
 						<p class="details__text"><?php the_field('details_text_5'); ?></p>
 					</div>
 					<div class="details__wrapper">
 						<div class="number">06</div>
-						<h4 class="details__header"><?php the_field('details_header_6'); ?></h4>
+						<h4 class="details__header"><?php the_field('details_header_6'); ?><i class="fa fa-chevron-down"></i></h4>
 						<p class="details__text"><?php the_field('details_text_6'); ?></p>
 					</div>
 				</div>

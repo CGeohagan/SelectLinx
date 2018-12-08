@@ -60,7 +60,6 @@ get_header(); ?>
 
 	        <div class="slider__item swiper-slide">
 	        	<div class="testimonial">
-	        		<!-- <i class="fa fa-quote-left"></i> -->
 		          <?php if( $description ): ?>
 		            <div class="testimonial__description"><?php echo $description; ?></div>
 		          <?php endif; ?>
